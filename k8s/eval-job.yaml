@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: llm-adversarial-eval-batch
+  namespace: ai-evaluation
+  labels:
+    app: agent-evaluator
+    engineer: faisal-sharif
+spec:
+  backoffLimit: 2
+  template:
+    metadata:
+      labels:
+        app: agent-evaluator
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: evaluator-runner
+          image: harbor.internal.corp/ai-alignment/eval-suite:latest
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "1000m"
+            limits:
+              memory: "4Gi"
+              cpu: "2000m"
+          env:
+            - name: EVAL_MODE
+              value: "ADVERSARIAL_RED_TEAMING"
+            - name: MAX_CONCURRENCY
+              value: "10"
+          volumeMounts:
+            - name: rubric-storage
+              mountPath: /data/rubrics
+      volumes:
+        - name: rubric-storage
+          configMap:
+            name: eval-rubrics-config
