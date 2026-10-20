@@ -16,7 +16,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: evaluator-runner
-          image: harbor.internal.corp/ai-alignment/eval-suite:latest
+          image: harbor.internal.corp/ai-training-eval/eval-suite:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:

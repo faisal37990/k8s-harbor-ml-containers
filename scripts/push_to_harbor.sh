@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-IMAGE_TAG="${1:-harbor.internal.corp/ai-alignment/eval-suite:latest}"
+IMAGE_TAG="${1:-harbor.internal.corp/ai-training-eval/eval-suite:latest}"
 
 echo "=================================================================="
 echo "  BUILDING & PUSHING CONTAINER TO HARBOR REGISTRY"

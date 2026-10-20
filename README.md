@@ -6,7 +6,7 @@
 [![Bash](https://img.shields.io/badge/Terminal-Automated%20CLI-000000?logo=gnubash&logoColor=white)](https://gnu.org)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-> **Enterprise containerization and orchestration harness for reproducible LLM evaluation, golden solution grading, and model alignment sandboxes.**
+> **Enterprise containerization and orchestration harness for reproducible LLM evaluation, golden solution grading, and model AI Training & Evaluation sandboxes.**
 > Maintained by **[Faisal Sharif](https://linkedin.com/in/mohammedalfaisal-sharif/)**.
 
 ---
